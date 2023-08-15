@@ -1,3 +1,5 @@
+start = Time.now
+
 require "bundler/inline"
 
 gemfile do
@@ -37,33 +39,4 @@ end
 
 puts "Image generated: #{midjourney_result["imageURL"]}"
 
-# test_data = [
-#   { "status" => "pending" },
-#   { "status" => "pending" },
-#   { "status" => "pending" },
-#   { "status" => "pending" },
-#   { "status" => "pending" },
-#   { "percentage" => 17,  "status" => "running" },
-#   { "percentage" => 17,  "status" => "running" },
-#   { "percentage" => 17,  "status" => "running" },
-#   { "percentage" => 45,  "status" => "running" },
-#   { "percentage" => 45,  "status" => "running" },
-#   { "percentage" => 45,  "status" => "running" },
-#   { "percentage" => 90,  "status" => "running" },
-#   { "percentage" => 90,  "status" => "running" },
-#   { "percentage" => 90,  "status" => "running" },
-#   { "imageURL" => "https://..........png" }
-# ]
-
-# index = 0
-# test = test_data[index]
-# until (midjourney_result = test).has_key?("imageURL")
-#   if midjourney_result.has_key?("percentage")
-#     puts "#{midjourney_result["percentage"]}% done"
-#   elsif midjourney_result.has_key?("status")
-#     puts "#{midjourney_result["status"]}"
-#   end
-#   sleep(1)
-#   index += 1
-#   test = test_data[index]
-# end
+puts "Time taken: #{Time.now - start} seconds"
